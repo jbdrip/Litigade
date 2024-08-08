@@ -53,7 +53,7 @@ const HeroSection: React.FC = () => {
                 Department *
               </label>
               <select
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-text-color text-sm leading-tight focus:outline-none focus:shadow-outline bg-input-color mt-1"
+                className="shadow border rounded w-full py-2 px-3 text-text-color text-sm leading-tight focus:outline-none focus:shadow-outline bg-input-color mt-1"
                 id="department"
               >
                 <option>Please Select</option>
@@ -65,7 +65,7 @@ const HeroSection: React.FC = () => {
                 Time *
               </label>
               <select
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-text-color text-sm leading-tight focus:outline-none focus:shadow-outline bg-input-color mt-1"
+                className="shadow border rounded w-full py-2 px-3 text-text-color text-sm leading-tight focus:outline-none focus:shadow-outline bg-input-color mt-1"
                 id="time"
               >
                 <option>4:00 Available</option>
