@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+# LITIGADE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una prueba técnica.
 
-## Available Scripts
+La aplicación es una pagina de presentación para la empresa demoninada 'Liigade'. En ella se muestra toda la información relacionada a la empresa y a su vez posee un formulario en
+la sección principal para poder agendar una cita. 
 
-In the project directory, you can run:
+Las tecnologias utilizadas para el frontend son las siguientes:
++ React
++ TailwindCSS
++ Typescript
+
+Las tecnologias utilizadas para el backend son las siguientes:
++ MongoDB
++ Flask
++ Python
+
+## Scripts disponibles
+
+Los comandos disponibles son los siguientes:
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
+corre la aplicacion en modo desarrollo.\
+Abrir [http://localhost:3000](http://localhost:3000) para poder ver la pagina.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+### `docker-compose up`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Levanta el servicio para la base de datos. Para este caso se crea un contenedor con docker
+utilizando una imagen de MongoDB. Si es la primera que se levanta el mismo crea al usuario indicado en el archivo 'init-mongo.js'. Este servicio cuenta con el volumen integrado para poder almacenar de forma correcta los datos.
 
-### `yarn build`
+### `py server.py`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Corre el servidor en el puerto 5000. Para ejecutar este comando se debe de estar dentro de la carpeta 'server'. Para este caso unicamente se crea una pequeña API con el endpoint para almacenar las citas.
