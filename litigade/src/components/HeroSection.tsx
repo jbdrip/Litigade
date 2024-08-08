@@ -1,7 +1,39 @@
+// src/HeroSection.tsx
 import React from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import Header from './Header';
+import { bookAppointment } from '../services/apiService';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+interface IFormInput {
+  name: string;
+  email: string;
+  department: string;
+  time: string;
+}
 
 const HeroSection: React.FC = () => {
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<IFormInput>();
+
+  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+    try {
+      const result = await bookAppointment(data);
+      console.log(result);
+      if(result.status === 200) {
+        toast.success(result.msg);
+        reset();
+      } else {
+        toast.error(result.msg);
+        console.log(result.data);
+      }
+      // Handle success (e.g., show a success message or redirect)
+    } catch (error) {
+      console.error('Error al enviar información:', error);
+      // Handle error (e.g., show an error message)
+    }
+  };
+
   return (
     <section
       className="bg-cover bg-center min-h-screen py-20 relative"
@@ -25,67 +57,80 @@ const HeroSection: React.FC = () => {
         </div>
         <div className="w-full md:w-1/2 lg:w-1/4 bg-white p-9 shadow-md rounded-lg mt-16 md:mt-0">
           <h2 className="text-xl font-bold text-text-color mb-8 text-center">Book Appointment</h2>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-4">
               <label className="block text-text-color text-sm font-bold mb-2" htmlFor="name">
                 Name*
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-text-color text-sm leading-tight focus:outline-none focus:shadow-outline bg-input-color mt-1"
+                {...register('name', { required: 'Este campo es requerido.' })}
+                className={`shadow appearance-none border rounded w-full py-2 px-3 text-text-color text-sm leading-tight focus:outline-none focus:shadow-outline bg-input-color mt-1 ${errors.name ? 'border-red-500' : ''}`}
                 id="name"
                 type="text"
                 placeholder="Full Name"
               />
+              {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
             </div>
             <div className="mb-4">
               <label className="block text-text-color text-sm font-bold mb-2" htmlFor="email">
                 Email*
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-text-color text-sm leading-tight focus:outline-none focus:shadow-outline bg-input-color mt-1"
+                {...register('email', { required: 'Este campo es requerido.', pattern: { value: /^\S+@\S+$/i, message: 'Dirección inválida.' } })}
+                className={`shadow appearance-none border rounded w-full py-2 px-3 text-text-color text-sm leading-tight focus:outline-none focus:shadow-outline bg-input-color mt-1 ${errors.email ? 'border-red-500' : ''}`}
                 id="email"
                 type="email"
                 placeholder="example@gmail.com"
               />
+              {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
             </div>
             <div className="mb-4">
               <label className="block text-text-color text-sm font-bold mb-2" htmlFor="department">
                 Department *
               </label>
               <select
-                className="shadow border rounded w-full py-2 px-3 text-text-color text-sm leading-tight focus:outline-none focus:shadow-outline bg-input-color mt-1"
+                {...register('department', { required: 'Este campo es requerido.' })}
+                className={`shadow border rounded w-full py-2 px-3 text-text-color text-sm leading-tight focus:outline-none focus:shadow-outline bg-input-color mt-1 ${errors.department ? 'border-red-500' : ''}`}
                 id="department"
               >
-                <option>Please Select</option>
-                {/* Add more options here */}
+                <option value="">Please Select</option>
+                <option value="sales">Ventas</option>
+                <option value="support">Soporte</option>
+                <option value="marketing">Marketing</option>
               </select>
+              {errors.department && <p className="text-red-500 text-xs mt-1">{errors.department.message}</p>}
             </div>
             <div className="mb-4">
               <label className="block text-text-color text-sm font-bold mb-2" htmlFor="time">
                 Time *
               </label>
               <select
-                className="shadow border rounded w-full py-2 px-3 text-text-color text-sm leading-tight focus:outline-none focus:shadow-outline bg-input-color mt-1"
+                {...register('time', { required: 'Este campo es requerido.' })}
+                className={`shadow border rounded w-full py-2 px-3 text-text-color text-sm leading-tight focus:outline-none focus:shadow-outline bg-input-color mt-1 ${errors.time ? 'border-red-500' : ''}`}
                 id="time"
               >
-                <option>4:00 Available</option>
-                {/* Add more options here */}
+                <option value="">Please Select</option>
+                <option value="9:00 AM">9:00 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="4:00 PM">4:00 PM</option>
               </select>
+              {errors.time && <p className="text-red-500 text-xs mt-1">{errors.time.message}</p>}
             </div>
             <div className="flex items-center justify-between mt-10">
               <button
                 className="bg-custom-blue hover:bg-blue-700 text-white text-sm font-bold py-4 px-4 rounded focus:outline-none focus:shadow-outline w-full"
-                type="button"
+                type="submit"
               >
-                Book Appointment
+                <span>Book Appointment</span>
               </button>
             </div>
           </form>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };
 
 export default HeroSection;
-
