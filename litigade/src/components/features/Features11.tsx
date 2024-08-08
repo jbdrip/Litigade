@@ -3,7 +3,7 @@ import { FaPlay } from 'react-icons/fa';
 
 const Features11: React.FC = () => {
   return (
-    <section className="relative py-16 bg-[#FAFAFA]">
+    <section className="relative py-16 bg-secondary-bg">
       <div className="text-center py-6 md:px-36">
         <h2 className="text-3xl font-extrabold text-text-color sm:text-4xl">Who We Are</h2>
         <p className="mt-4 text-md text-second-text-color px-12 md:px-72">

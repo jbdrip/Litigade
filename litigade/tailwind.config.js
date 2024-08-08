@@ -14,6 +14,7 @@ module.exports = {
         'learn-more': '#D0A144',
         'feature-bg': '#F6E4D7',
         'feature-border': '#A9D6FF',
+        'secondary-bg': '#FAFAFA'
       },
       fontFamily: {
         sans: ['Martel', 'Montserrat', 'Open Sans'],
