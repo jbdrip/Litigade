@@ -22,9 +22,7 @@ Los comandos disponibles son los siguientes:
 ### `yarn start`
 
 corre la aplicacion en modo desarrollo.\
-Abrir [http://localhost:3000](http://localhost:3000) para poder ver la pagina.
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Abrir [http://localhost:3000](http://localhost:3000) para poder ver la pagina. Para correr este comando primero se deben de instalar todas las dependencias.
 
 ### `docker-compose up`
 
