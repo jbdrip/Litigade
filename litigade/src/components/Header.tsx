@@ -10,18 +10,20 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="container mx-auto flex items-center justify-between py-2 px-4 absolute top-0 left-0 right-0 z-50 bg-transparent md:bg-transparent">
-      <div className="text-2xl font-bold text-gray-900 md:text-white">Litigade</div>
-      <nav className="hidden md:flex space-x-8 text-gray-300">
+    <header className="container mx-auto flex items-center justify-between py-8 absolute top-0 left-0 right-0 z-50 bg-transparent md:bg-transparent ">
+      <div className="text-2xl font-bold text-text-color pl-36">Litigade</div>
+      <div className="flex items-center space-x-4">
+      <nav className="hidden md:flex space-x-8 text-second-text-color text-sm mr-12">
         <a href="#" className="hover:text-white">Home</a>
         <a href="#" className="hover:text-white">Product</a>
         <a href="#" className="hover:text-white">Pricing</a>
         <a href="#" className="hover:text-white">Contact</a>
       </nav>
-      <div className="flex items-center space-x-4">
-        <FiSearch className="text-gray-900 md:text-gray-300 hover:text-white cursor-pointer" />
-        <FiShoppingCart className="text-gray-900 md:text-gray-300 hover:text-white cursor-pointer" />
-        <FiMenu onClick={toggleMobileMenu} className="text-gray-900 md:text-gray-300 hover:text-white cursor-pointer md:hidden" />
+        <div className='flex space-x-4 pr-24'>
+          <FiSearch className="text-second-text-color hover:text-white cursor-pointer" />
+          <FiShoppingCart className="text-second-text-color hover:text-white cursor-pointer" />
+        </div>
+        <FiMenu onClick={toggleMobileMenu} className="text-second-text-color hover:text-white cursor-pointer" />
       </div>
       {isMobileMenuOpen && (
         <div className="absolute top-0 left-0 right-0 bg-white md:hidden z-50 p-4">
@@ -29,7 +31,7 @@ const Header: React.FC = () => {
             <div className="text-2xl font-bold text-gray-900">Litigade</div>
             <FiX onClick={toggleMobileMenu} className="text-gray-900 cursor-pointer" />
           </div>
-          <nav className="flex flex-col items-center space-y-4 text-gray-900">
+          <nav className="flex flex-col items-center space-y-4 text-second-text-color">
             <a href="#" className="hover:text-gray-700">Home</a>
             <a href="#" className="hover:text-gray-700">Product</a>
             <a href="#" className="hover:text-gray-700">Pricing</a>

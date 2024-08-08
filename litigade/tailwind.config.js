@@ -11,6 +11,9 @@ module.exports = {
         'custom-blue': '#295C7A',
         'input-color': '#F9F9F9',
         'input-border-color': '#BDBDBD',
+        'learn-more': '#D0A144',
+        'feature-bg': '#F6E4D7',
+        'feature-border': '#A9D6FF',
       },
       fontFamily: {
         sans: ['Martel', 'Montserrat', 'Open Sans'],

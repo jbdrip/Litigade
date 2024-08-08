@@ -1,32 +1,31 @@
 import React from 'react';
+import { GiScales } from 'react-icons/gi';
+import { FaGavel } from 'react-icons/fa';
+import { HiOutlineDocumentText } from 'react-icons/hi';
 
 const Features6: React.FC = () => {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Practice Advice</h2>
-          <p className="mt-4 text-lg text-gray-500">
+    <section className="py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="text-center py-6 md:px-36">
+          <h2 className="text-3xl font-extrabold text-text-color sm:text-4xl">Practice Advice</h2>
+          <p className="mt-4 text-md text-second-text-color px-12 md:px-36">
             Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics
           </p>
         </div>
-        <div className="mt-12 grid gap-6 lg:grid-cols-3 lg:max-w-none">
+        <div className="mt-12 grid gap-8 lg:grid-cols-3 lg:max-w-none px-3 md:px-0">
           {cards.map((card) => (
-            <div key={card.title} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-              <div className="flex-1 bg-white p-6 flex flex-col justify-between">
-                <div className="flex-1">
-                  <div className="flex items-center">
-                    <div className="flex-shrink-0">
-                      <img className="h-12 w-12" src={card.icon} alt={card.title} />
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="text-xl font-medium text-gray-900">{card.title}</h3>
-                    </div>
-                  </div>
-                  <p className="mt-3 text-base text-gray-500">{card.description}</p>
+            <div key={card.title} className="flex flex-col rounded-lg overflow-hidden bg-white">
+              <div className="flex items-center justify-center bg-[#F6E4D7] px-4 py-8">
+                <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center">
+                  {card.icon}
                 </div>
+                <h3 className="ml-4 font-bold text-text-color">{card.title}</h3>
+              </div>
+              <div className="flex-1 -mt-1 bg-white p-6 border border-[#A9D6FF] rounded-lg">
+                <p className="text-sm text-second-text-color leading-loose font-bold whitespace-pre-line px-6">{card.description}</p>
                 <div className="mt-6">
-                  <a href="#" className="text-base font-semibold text-indigo-600 hover:text-indigo-500">
+                  <a href="#" className="text-base font-semibold text-[#D0A144] hover:text-yellow-600 px-4">
                     Learn More
                   </a>
                 </div>
@@ -47,7 +46,7 @@ const cards = [
     - Lightning fast prototyping
     - Fastest way to organize
     - Work at the speed of thought.`,
-    icon: 'path/to/fraud-icon.png',
+    icon: <GiScales className="text-yellow-500" size={20} />,
   },
   {
     title: 'Bailes & Warrants',
@@ -56,7 +55,7 @@ const cards = [
     - Lightning fast prototyping
     - Fastest way to organize
     - Work at the speed of thought.`,
-    icon: 'path/to/bailes-icon.png',
+    icon: <FaGavel className="text-yellow-500" size={20} />,
   },
   {
     title: 'Federal Drug Crimes',
@@ -65,7 +64,7 @@ const cards = [
     - Lightning fast prototyping
     - Fastest way to organize
     - Work at the speed of thought.`,
-    icon: 'path/to/drug-icon.png',
+    icon: <HiOutlineDocumentText className="text-yellow-500" size={20} />,
   },
 ];
 

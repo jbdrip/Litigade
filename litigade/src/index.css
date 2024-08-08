@@ -8,6 +8,6 @@ p, label, input, select, textarea {
     @apply font-montserrat;
 }
 
-button {
+button, a {
     @apply font-open-sans;
 }

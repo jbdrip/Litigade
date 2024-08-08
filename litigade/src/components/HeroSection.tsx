@@ -8,12 +8,12 @@ const HeroSection: React.FC = () => {
       style={{ backgroundImage: `url('https://s3-alpha-sig.figma.com/img/4719/6499/b7c887b760cd65685a6f0ca9b9efbc72?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PTlRNdSEiKo42j8xQrvgpRs9DaFkjNuaBSq97egprnhpasd5pg6GOnvAs75I4dt3Ic-ioLmbSa6S4~4t3GKjl4UVgRGS0W6EcPclc805zfOh961a-8c-GHlVk-W2l4i9SYQEo-uujFm-aoEGgM2QP5hKwwshwVlmOLYmCtdy~WgU7cDCz9Q9~BDvA5ywEIw94eB00W7pIIrpvScxBuwr-2jmNTZHJRcEXdNogxZNtirRXu6q1USJYQDiMEnW2JVAwSM-tG0EtgjmnLjrkB7g0rC8WdxKr-Hh5g3DiiaooqzAJHEfagYWamv3hpgbz3QRvZtrVYiA-f~KuIaKMBONBw__')` }}
     >
       <Header />
-      <div className="container mx-auto flex flex-wrap justify-between items-center text-white mt-16 px-4">
-        <div className="w-full md:w-1/2 lg:w-3/4 mb-10 md:mb-0 text-center md:text-left px-28">
-          <h1 className="text-6xl font-bold text-text-color mb-4">
+      <div className="container mx-auto flex flex-wrap justify-between items-center text-white mt-16 px-9">
+        <div className="w-full md:w-1/2 lg:w-3/4 mb-10 md:mb-0 text-center md:text-left md:px-28">
+          <h1 className="md:text-6xl text-4xl font-bold text-text-color mb-4">
             Help to reclaim your life and freedom
           </h1>
-          <div className='pr-32'>
+          <div className='md:pr-32'>
             <p className="text-lg text-second-text-color tracking-wide my-9">
               We know how large objects will act, but things on a small scale.
             </p>
@@ -23,8 +23,8 @@ const HeroSection: React.FC = () => {
             <button className="border border-brown text-brown font-bold px-9 py-3 rounded-full">Learn More</button>
           </div>
         </div>
-        <div className="w-full md:w-1/2 lg:w-1/4 bg-white p-9 shadow-md rounded-lg">
-          <h2 className="text-2xl font-bold text-text-color mb-8 text-center">Book Appointment</h2>
+        <div className="w-full md:w-1/2 lg:w-1/4 bg-white p-9 shadow-md rounded-lg mt-16 md:mt-0">
+          <h2 className="text-xl font-bold text-text-color mb-8 text-center">Book Appointment</h2>
           <form>
             <div className="mb-4">
               <label className="block text-text-color text-sm font-bold mb-2" htmlFor="name">
