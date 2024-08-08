@@ -74,7 +74,7 @@ const Contact = () => {
               <div>
                 <button
                   type="submit"
-                  className="w-full py-3 px-4 bg-brown-500 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brown-500"
+                  className="w-full py-3 px-4 bg-brown text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brown"
                 >
                   Book Appointment
                 </button>

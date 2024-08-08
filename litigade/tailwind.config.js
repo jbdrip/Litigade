@@ -5,9 +5,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brown: {
-          500: '#A0522D', // Custom brown color
-        },
+        brown: '#784F33',
+        'text-color': '#252B42',
+        'second-text-color': '#737373',
+        'custom-blue': '#295C7A',
+        'input-color': '#F9F9F9',
+        'input-border-color': '#BDBDBD',
+      },
+      fontFamily: {
+        sans: ['Martel', 'Montserrat', 'Open Sans'],
+        montserrat: ['Montserrat', 'sans-serif'],
+        'open-sans': ['Open Sans', 'sans-serif'], 
       },
     },
   },

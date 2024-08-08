@@ -11,7 +11,7 @@ const Consultation = () => {
         <div className="mt-4 lg:mt-0 lg:w-1/3 lg:flex lg:justify-end">
           <button
             type="button"
-            className="py-3 px-6 bg-brown-500 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brown-500"
+            className="py-3 px-6 bg-brown text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brown"
           >
             Contact Us
           </button>
